@@ -1,6 +1,7 @@
 package it.unipr.barbato.Model.Interface;
 
 import java.util.ArrayList;
+import java.io.Serializable;
 
 /**
  * The {@code ProductsList} interface represents a list of products in a distributed system.
@@ -8,7 +9,7 @@ import java.util.ArrayList;
  * 
  * @author Vincenzo Barbato 345728
  */
-public interface ProductsList extends java.io.Serializable {
+public interface ProductsList extends Serializable {
 
 	/**
 	 * Returns the product with the specified serial number

@@ -15,12 +15,16 @@ import org.apache.activemq.ActiveMQConnectionFactory;
 import it.unipr.barbato.Model.Interface.OnMessage;
 
 public class MessageHandler implements MessageListener {
-	private String BROKER_URL = "tcp://localhost:61616";
 	private OnMessage customOnMessage = null;
 	private ActiveMQConnection connection = null;
 
-	public MessageHandler(final String BROKER_URL ) {
-		this.BROKER_URL = BROKER_URL;
+	public MessageHandler(final String BROKER_URL) throws JMSException {
+		ActiveMQConnectionFactory cf = new ActiveMQConnectionFactory(BROKER_URL);
+		cf.setTrustAllPackages(true);
+
+		connection = (ActiveMQConnection) cf.createConnection();
+
+		connection.start();
 	}
 
 	/**
@@ -31,12 +35,6 @@ public class MessageHandler implements MessageListener {
 	 **/
 	public void publish(String topic_name, java.io.Serializable obj) {
 		try {
-			ActiveMQConnectionFactory cf = new ActiveMQConnectionFactory(this.BROKER_URL);
-
-			connection = (ActiveMQConnection) cf.createConnection();
-
-			connection.start();
-
 			TopicSession session = connection.createTopicSession(false, Session.AUTO_ACKNOWLEDGE);
 
 			Topic topic = session.createTopic(topic_name);
@@ -56,13 +54,6 @@ public class MessageHandler implements MessageListener {
 
 	public void subscribe(String topic_name) {
 		try {
-
-			ActiveMQConnectionFactory cf = new ActiveMQConnectionFactory(BROKER_URL);
-			cf.setTrustAllPackages(true);
-
-			connection = (ActiveMQConnection) cf.createConnection();
-
-			connection.start();
 
 			TopicSession session = connection.createTopicSession(false, Session.AUTO_ACKNOWLEDGE);
 

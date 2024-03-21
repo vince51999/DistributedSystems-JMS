@@ -1,11 +1,13 @@
 package it.unipr.barbato.Model.Interface;
+
+import java.io.Serializable;
 /**
  * The {@code Product} interface represents a product in a distributed system.
  * It provides methods to retrieve the price and serial number of the product.
  * 
  * @author Vincenzo Barbato 345728
  */
-public interface Product extends java.io.Serializable {
+public interface Product extends Serializable {
 	/**
 	 * Returns the price of the product
 	 * 
