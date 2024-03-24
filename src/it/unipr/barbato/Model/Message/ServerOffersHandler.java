@@ -17,8 +17,10 @@ import jakarta.jms.MessageProducer;
 import jakarta.jms.ObjectMessage;
 
 /**
- * The {@code ServerOffersHandler} class implements the {@link Handler} and {@link MessageListener} interfaces
- * to handle server-side offers for products. It keeps track of the number of connected clients and response to client offers.
+ * The {@code ServerOffersHandler} class implements the {@link Handler} and
+ * {@link MessageListener} interfaces to handle server-side offers for products.
+ * It keeps track of the number of connected clients and response to client
+ * offers.
  * 
  * @author Vincenzo Barbato 345728
  */
