@@ -39,7 +39,7 @@ public class Server {
 	 * Runnable method to run the server.
 	 *
 	 * @param args Arguments for the main method
-	 * @throws Exception            If there is a problem running the server
+	 * @throws Exception If there is a problem running the server
 	 */
 	public static void main(String[] args) throws Exception {
 		MessageHandlerImpl messageHandler = new MessageHandlerImpl();
