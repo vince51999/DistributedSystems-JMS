@@ -12,7 +12,7 @@ import jakarta.jms.MessageListener;
 import jakarta.jms.ObjectMessage;
 
 /**
- * The {@code ClientOffer} represents a client offer for a product.
+ * The {@code ClientOfferHandler} represents a client offer for a product.
  * Implements the {@link Handler} and {@link MessageListener} interfaces.
  * 
  * @author Vincenzo Barbato 345728
@@ -24,7 +24,7 @@ public class ClientOfferHandler implements Handler, MessageListener {
 	private MessageHandler messageHandler = null;
 
 	/**
-	 * Constructs a ClientOffer object with the specified MessageHandler.
+	 * Constructs a ClientOfferHandler object with the specified MessageHandler.
 	 *
 	 * @param messageHandler the MessageHandler to use for sending and receiving messages
 	 * @throws JMSException if there is an error with the JMS connection
