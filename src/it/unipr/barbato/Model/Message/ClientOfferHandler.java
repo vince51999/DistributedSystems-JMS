@@ -12,7 +12,7 @@ import jakarta.jms.MessageListener;
 import jakarta.jms.ObjectMessage;
 
 /**
- * The {@code ClientOfferHandler} represents a client offer for a product.
+ * The {@code ClientOfferHandler} represents a client offers for products.
  * Implements the {@link Handler} and {@link MessageListener} interfaces.
  * 
  * @author Vincenzo Barbato 345728
@@ -35,7 +35,8 @@ public class ClientOfferHandler implements Handler, MessageListener {
 	/**
 	 * Constructs a ClientOfferHandler object with the specified MessageHandler.
 	 *
-	 * @param messageHandler the MessageHandler to use for sending and receiving messages
+	 * @param messageHandler the MessageHandler to use for sending and receiving
+	 *                       messages
 	 * @throws JMSException if there is an error with the JMS connection
 	 */
 	public ClientOfferHandler(MessageHandlerImpl messageHandler) throws JMSException {
@@ -61,7 +62,8 @@ public class ClientOfferHandler implements Handler, MessageListener {
 	}
 
 	/**
-	 * Sets the client offer with the specified serial number, offer, and confirmation status.
+	 * Sets the client offer with the specified serial number, offer, and
+	 * confirmation status.
 	 *
 	 * @param sn      the serial number of the product
 	 * @param offer   the offer price
@@ -80,13 +82,11 @@ public class ClientOfferHandler implements Handler, MessageListener {
 		messageHandler.send("offersList", offer, RequestType.subscribe);
 	}
 
-
 	@Override
 	public void close() throws JMSException {
 		offer.setSubscribe(false);
 		messageHandler.send("offersList", offer, RequestType.subscribe);
 	}
-
 
 	@Override
 	public void onMessage(Message message) {

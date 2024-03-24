@@ -10,10 +10,11 @@ import jakarta.jms.MessageListener;
 import jakarta.jms.ObjectMessage;
 
 /**
- * The {@code ClientProductsHandler} class implements the {@link Handler} and {@link MessageListener} interfaces.
- * It is responsible for handling client product messages and updating the products list.
+ * The {@code ClientProductsHandler} class implements the {@link Handler} and
+ * {@link MessageListener} interfaces. It is responsible for handling client
+ * product messages and updating the products list.
  * 
- *  @author Vincenzo Barbato 345728
+ * @author Vincenzo Barbato 345728
  */
 public class ClientProductsHandler implements Handler, MessageListener {
 
@@ -44,19 +45,16 @@ public class ClientProductsHandler implements Handler, MessageListener {
 		return this.productsList;
 	}
 
-
 	@Override
 	public void start() throws JMSException {
 		messageHandler.setOnSubscribe(this);
 		messageHandler.subscribe("productsList");
 	}
 
-
 	@Override
 	public void close() throws JMSException {
 		System.out.println("Leave the shop.");
 	}
-
 
 	@Override
 	public void onMessage(Message message) {
