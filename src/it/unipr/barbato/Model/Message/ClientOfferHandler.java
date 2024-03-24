@@ -19,9 +19,18 @@ import jakarta.jms.ObjectMessage;
  */
 public class ClientOfferHandler implements Handler, MessageListener {
 
+	/**
+	 * The count of products that client have bought.
+	 */
 	private int productsCount = 0;
+	/**
+	 * The client offer.
+	 */
 	private ProductOfferImpl offer = null;
-	private MessageHandler messageHandler = null;
+	/**
+	 * The message handler.
+	 */
+	private MessageHandlerImpl messageHandler = null;
 
 	/**
 	 * Constructs a ClientOfferHandler object with the specified MessageHandler.
@@ -29,7 +38,7 @@ public class ClientOfferHandler implements Handler, MessageListener {
 	 * @param messageHandler the MessageHandler to use for sending and receiving messages
 	 * @throws JMSException if there is an error with the JMS connection
 	 */
-	public ClientOfferHandler(MessageHandler messageHandler) throws JMSException {
+	public ClientOfferHandler(MessageHandlerImpl messageHandler) throws JMSException {
 		this.messageHandler = messageHandler;
 	}
 

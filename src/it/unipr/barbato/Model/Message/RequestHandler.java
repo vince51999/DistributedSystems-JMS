@@ -10,8 +10,17 @@ import java.io.Serializable;
  */
 public class RequestHandler implements Serializable {
 
+	/**
+	 * The serial version UID.
+	 */
 	private static final long serialVersionUID = 1L;
+	/**
+	 * The serializable object to be encapsulated.
+	 */
 	public Serializable obj = null;
+	/**
+	 * The request type associated with the object.
+	 */
 	public RequestType type = null;
 
 	/**

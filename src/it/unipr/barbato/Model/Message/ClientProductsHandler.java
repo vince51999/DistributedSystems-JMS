@@ -16,15 +16,22 @@ import jakarta.jms.ObjectMessage;
  *  @author Vincenzo Barbato 345728
  */
 public class ClientProductsHandler implements Handler, MessageListener {
+
+	/**
+	 * The products list.
+	 */
 	private ProductsList productsList = null;
-	private MessageHandler messageHandler = null;
+	/**
+	 * The message handler.
+	 */
+	private MessageHandlerImpl messageHandler = null;
 
 	/**
 	 * Constructs a ClientProductsHandler object with the specified MessageHandler.
 	 *
 	 * @param messageHandler the MessageHandler to be used for handling messages
 	 */
-	public ClientProductsHandler(MessageHandler messageHandler) {
+	public ClientProductsHandler(MessageHandlerImpl messageHandler) {
 		this.messageHandler = messageHandler;
 	}
 
