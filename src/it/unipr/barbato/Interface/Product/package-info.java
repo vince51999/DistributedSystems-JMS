@@ -1,6 +1,8 @@
 /**
- * This package contains the interfaces related to products.
- * These interfaces define the behavior and properties of different types of products.
+ * The {@code it.unipr.barbato.Interface.Product} package contains classes and interfaces related to products.
+ * This package provides functionality for managing and manipulating product data.
+ * It includes classes for defining product attributes, such as name, price, and description,
+ * as well as interfaces for implementing product-related operations.
  * 
  * @author Vincenzo Barbato 345728
  */
