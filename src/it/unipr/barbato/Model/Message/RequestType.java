@@ -8,6 +8,12 @@ package it.unipr.barbato.Model.Message;
  * @author Vincenzo Barbato 345728
  */
 public enum RequestType {
+	/**
+	 * The subscribe request type.
+	 */
 	subscribe,
+	/**
+	 * The offer request type.
+	 */
 	offer
 }
