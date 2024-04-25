@@ -5,13 +5,6 @@
 
 This project simulates a distributed shop application based on JMS.
 
-## Import project
-
-If you have ssh key access you can clone project with:
-```
-git clone git@github.com:vince51999/DistributedSystems-JMS.git
-```
-
 ## Documentation
 
 Javadoc documentation can be found in the folder: **JMS/javadoc**
